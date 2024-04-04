@@ -13,6 +13,7 @@ class Conexao
     }
     public static function conectar()
     {
+
         if(!self::$conexao)
         {
             // criação do PDO com a nova conexão
@@ -25,13 +26,6 @@ class Conexao
                 self::$conexao->exec('SET NAMES '. DB_CHARSET . 'collate '. DB_COLLATE);
         }
 
-        }
-
-        return self::$conexao;
-
-        $pdo = new \PDO('mysql:host=localhost;dbname=teste;charset=utf8', 'root', '');
-        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        return $pdo;
     }
 
 }
